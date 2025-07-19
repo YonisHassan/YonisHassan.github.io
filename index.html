@@ -1,0 +1,536 @@
+<! -- To add later,
+    - Add a dark mode button that can switch the website between dark and light mode
+    - Add a blog section with recent articles - made the place holder so far
+    - Add a loading spinner for initial page load
+    - Use Lucide icons for better scalability and customization
+    - Ensure accessibility features are in place (ARIA labels, alt text for images)
+    - Learn more tailwind css animation its actually cool
+    - Add a button to switch the themes, different colours and stuff
+-- >
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yonis Hassan - Data Scientist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        .animate-pulse-slow-2 {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            animation-delay: 1s;
+        }
+        
+        .animate-pulse-slow-3 {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            animation-delay: 2s;
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-out;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .backdrop-blur-custom {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold text-cyan-400">Yonis Hassan</h1>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</a>
+                    <a href="#projects" class="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
+        <div class="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow-2"></div>
+        <div class="absolute bottom-1/4 left-1/2 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow-3"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div class="mb-12 flex flex-col items-center">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative w-52 h-52 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full shadow-2xl overflow-hidden border-4 border-white/20 bg-gray-700">
+                    <img src="Profile.jpeg" alt="Yonis Hassan" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-cyan-500 flex items-center justify-center text-white text-4xl font-bold\'>YH</div>'">
+                </div>
+            </div>
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 gradient-text leading-tight">
+            Yonis Hassan
+        </h1>
+        
+        <p class="text-xl md:text-2xl lg:text-3xl text-blue-200 mb-4 font-light">
+            Data Scientist
+        </p>
+        
+        <p class="text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+            MSc Astrophysics at Queen Mary University of London.
+            <br>
+            BSc Physics with Data Science at Queen Mary University of London.
+            <br>
+            Engineering intelligent systems that transform complex data into actionable insights
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#projects" class="group px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full font-semibold text-white hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25">
+                View My Work
+                <span class="inline-block ml-2 group-hover:translate-y-1 transition-transform">↓</span>
+            </a>
+            <a href="#contact" class="px-8 py-4 border-2 border-cyan-500 rounded-full font-semibold text-cyan-500 hover:bg-cyan-500 hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+                Get In Touch
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 gradient-text">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="p-6 md:p-8 bg-gray-900 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="brain" class="w-6 h-6 md:w-8 md:h-8 text-cyan-400 mr-3"></i>
+                            <h3 class="text-xl md:text-2xl font-bold text-cyan-400">AI & Machine Learning</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                            Passionate about leveraging cutting-edge AI and machine learning techniques to solve real-world problems. 
+                            Experience with neural networks, deep learning, and predictive modeling.
+                        </p>
+                    </div>
+
+                    <div class="p-6 md:p-8 bg-gray-900 rounded-2xl border border-gray-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="database" class="w-6 h-6 md:w-8 md:h-8 text-purple-400 mr-3"></i>
+                            <h3 class="text-xl md:text-2xl font-bold text-purple-400">Data Science</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                            Expert in extracting insights from complex datasets, statistical analysis, and data visualization. 
+                            Specialized in building scalable data pipelines and predictive models.
+                        </p>
+                    </div>
+
+                    <div class="p-6 md:p-8 bg-gray-900 rounded-2xl border border-gray-700 hover:border-green-500 transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="code" class="w-6 h-6 md:w-8 md:h-8 text-green-400 mr-3"></i>
+                            <h3 class="text-xl md:text-2xl font-bold text-green-400">Software Development</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                            Full-stack development experience with modern frameworks and technologies. 
+                            Building robust applications that bridge the gap between data science and user experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-cyan-400">Skills & Expertise</h3>
+                        <p class="text-gray-300 mb-8 leading-relaxed text-sm md:text-base">
+                            Data Science Intern at Infosys and AI Trainer at Outlier with proven track record in 
+                            building high-performance machine learning models and delivering actionable insights.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Python</span>
+                                <span class="text-cyan-400 font-bold">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-blue-500 to-blue-700 rounded-full" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Machine Learning</span>
+                                <span class="text-cyan-400 font-bold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-purple-500 to-purple-700 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Data Science</span>
+                                <span class="text-cyan-400 font-bold">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-green-500 to-green-700 rounded-full" style="width: 0%" data-width="88%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">JavaScript</span>
+                                <span class="text-cyan-400 font-bold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">SQL</span>
+                                <span class="text-cyan-400 font-bold">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-indigo-500 to-indigo-700 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 md:py-32 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 gradient-text">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Discover my latest work in machine learning, data science, and AI applications
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gray-800 border border-gray-700 hover:border-cyan-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="relative z-0 transform group-hover:scale-110 transition-transform duration-300">
+                            <img src="car.jpg" alt="Car" class="w-28 h-28 rounded-lg object-cover border-2 border-white/30 shadow-lg">
+                        </div>
+                        <div class="absolute bottom-2 left-4 right-4">
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-2 py-1 bg-black bg-opacity-30 rounded-full text-xs font-medium text-white">96.5% RF Accuracy</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-30 rounded-full text-xs font-medium text-white">98.8% MLP Accuracy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            Car Acceptability Prediction
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
+                            Built Random Forest and MLP models achieving 96.5% and 98.8% accuracy respectively using the UCI Car Evaluation dataset.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">Python</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">SMOTE</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">Optuna</span>
+                        </div>
+                        <div class="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            <span class="font-medium text-sm md:text-base">View Project</span>
+                            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gray-800 border border-gray-700 hover:border-cyan-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="relative z-10 transform group-hover:scale-110 transition-transform duration-300">
+                            <img src="jwst.jpg" alt="JWST" class="w-28 h-28 rounded-lg object-cover border-2 border-white/30 shadow-lg">
+                        </div>
+                        <div class="absolute bottom-2 left-4 right-4">
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-2 py-1 bg-black bg-opacity-30 rounded-full text-xs font-medium text-white">96.7% Accuracy</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-30 rounded-full text-xs font-medium text-white">0.89 AUC Score</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            Pulsar Star Classification
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
+                            Engineered Decision Tree classifier achieving 96.7% accuracy and 0.89 AUC on the HTRU2 dataset for pulsar identification.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">Python</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">Scikit-learn</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">ROC Analysis</span>
+                        </div>
+                        <div class="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            <span class="font-medium text-sm md:text-base">View Project</span>
+                            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gray-800 border border-gray-700 hover:border-cyan-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="relative z-10 transform group-hover:scale-110 transition-transform duration-300">
+                            <img src="money.jpg" alt="Money" class="w-28 h-28 rounded-lg object-cover border-2 border-white/30 shadow-lg">
+                        </div>
+                        <div class="absolute bottom-2 left-4 right-4">
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-2 py-1 bg-black bg-opacity-30 rounded-full text-xs font-medium text-white">95% Precision</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-30 rounded-full text-xs font-medium text-white">40% Loss Reduction</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            Fraud Detection System
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
+                            Engineered fraud detection system achieving 95% precision rate, significantly reducing financial losses.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">Python</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">Machine Learning</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm border border-gray-600">Classification</span>
+                        </div>
+                        <div class="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            <span class="font-medium text-sm md:text-base">View Project</span>
+                            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <div class="max-w-5xl mx-auto text-center px-6">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 gradient-text">Let's Connect</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mb-8"></div>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                    Ready to collaborate on exciting data science and AI projects? Let's build something amazing together.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <a href="mailto:yonishassan267@gmail.com" class="group p-6 md:p-8 bg-gray-800 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cyan-400 mb-2">Email</h3>
+                    <p class="text-gray-300 text-sm md:text-base">yonishassan267@gmail.com</p>
+                </a>
+
+                <a href="https://linkedin.com/in/yonishassan267" target="_blank" rel="noopener noreferrer" class="group p-6 md:p-8 bg-gray-800 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="linkedin" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-2">LinkedIn</h3>
+                    <p class="text-gray-300 text-sm md:text-base">Professional Network</p>
+                </a>
+
+                <a href="https://github.com/YonisHassan" target="_blank" rel="noopener noreferrer" class="group p-6 md:p-8 bg-gray-800 rounded-2xl border border-gray-700 hover:border-purple-500 transition-all duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="github" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-400 mb-2">GitHub</h3>
+                    <p class="text-gray-300 text-sm md:text-base">Code Repository</p>
+                </a>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400 mb-8 text-sm md:text-base">
+                    Currently open to new opportunities in data science, machine learning, and AI development.
+                </p>
+                <div class="flex justify-center">
+                    <div class="w-32 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 md:py-32 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-relaxed">
+                    <span class="gradient-text">Latest Blog Posts</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Explore my latest articles on data science, AI, and technology trends
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-700 hover:border-cyan-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="relative z-10 text-center">
+                            <i data-lucide="brain" class="w-16 h-16 text-white/80 group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            Understanding Neural Networks
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
+                            A deep dive into the architecture and functioning of neural networks, exploring their applications in AI.
+                        </p>
+                        <div class="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            <span class="font-medium text-sm md:text-base">Read More</span>
+                            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-700 hover:border-purple-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 via-pink-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="relative z-10 text-center">
+                            <i data-lucide="bar-chart-3" class="w-16 h-16 text-white/80 group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 text-purple-400 group-hover:text-purple-300 transition-colors">
+                            Data Visualization Techniques
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
+                            Exploring various data visualization techniques to effectively communicate insights and findings.
+                        </p>
+                        <div class="flex items-center text-purple-400 group-hover:text-purple-300 transition-colors">
+                            <span class="font-medium text-sm md:text-base">Read More</span>
+                            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-700 hover:border-green-500 transition-all duration-500 transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-green-600 via-teal-600 to-blue-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="relative z-10 text-center">
+                            <i data-lucide="shield-check" class="w-16 h-16 text-white/80 group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 text-green-400 group-hover:text-green-300 transition-colors">
+                            AI Ethics and Responsibility
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
+                            Discussing the ethical implications of AI technologies and the importance of responsible AI development.
+                        </p>
+                        <div class="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
+                            <span class="font-medium text-sm md:text-base">Read More</span>
+                            <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full font-semibold text-white hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25">
+                    View All Articles
+                    <span class="ml-2">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900', 'backdrop-blur-custom', 'shadow-xl', 'border-b', 'border-gray-800');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-gray-900', 'backdrop-blur-custom', 'shadow-xl', 'border-b', 'border-gray-800');
+                header.classList.add('bg-transparent');
+            }
+        });
+
+        // Animate skill bars when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        });
+
+        // Observe the skills section
+        const skillsSection = document.querySelector('#about');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
